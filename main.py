@@ -62,7 +62,7 @@ def recordExtractor(mallId, file, analitica):
                 cur.execute(textQuery)
                 records = cur.fetchall()
                 if records:
-                    lastTime[i] = datetime.strptime(records[0][0]+' '+records[0][1],'%d-%m-%Y  %H-%M-%S')
+                    lastTime[i] = datetime.strptime(records[0][0]+' '+records[0][1],'%d-%m-%Y  %H:%M:%S')
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
         finally:
@@ -73,7 +73,7 @@ def recordExtractor(mallId, file, analitica):
         for rec in reversed(recordFromFile):
             for source in range(sourceNumber):
                 if rec[-1] > lastTime[source]:
-                    recordInsert.append((mallId, source,rec[source], rec[-1].strftime("%d-%m-%Y"), rec[-1].strftime("%H-%M-%S"), analitica))
+                    recordInsert.append((mallId, source,rec[source], rec[-1].strftime("%d-%m-%Y"), rec[-1].strftime("%:-%M:%S"), analitica))
                 
         print("Finish,", len(recordInsert), "records")
         
