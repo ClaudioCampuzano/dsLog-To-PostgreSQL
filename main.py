@@ -5,8 +5,13 @@ from psycopg2 import extras
 from psycopg2 import sql
 
 params_dic = {
+    "host": "-",
+    "database": "-",
+    "user": "-",
+    "password": "-",
+    "port": "-"
 }
-tableName = 'log_ds'
+tableName = '-'
 
 def connect():
     global params_dic
