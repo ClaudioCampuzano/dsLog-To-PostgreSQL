@@ -25,7 +25,7 @@ def connect():
 def recordExtractor(mallId, file, analitica):
     global tableName
     recordInsert = []
-    print(analitica)
+    print('---------------',analitica,'---------------')
        
     try:
         print("Recovering file record...")
@@ -107,4 +107,4 @@ if __name__ == '__main__':
             if conn is not None:
                 conn.close()
     else:
-        print("Whitout data")
+        print("\nWhitout data to insert")
