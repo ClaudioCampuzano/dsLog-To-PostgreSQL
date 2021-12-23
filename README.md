@@ -7,3 +7,8 @@ source env/bin/activate
 pip3 install -r requirements.txt
 python3 main.py -n 0 -f ds_flujo.log -a ds_aforo.log
 ```
+
+```
+chmod +x exec.sh 
+./exec.sh 
+```
