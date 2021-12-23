@@ -38,7 +38,8 @@ def recordExtractor(mallId, file, analitica):
                     continue
                 fps_sources = []
                 for fps in line.rstrip().replace("**PERF:","").strip().split("\t"):
-                    fps_sources.append(fps.split(" ")[0])
+                    if fps.split(" ")[0].replace('.','',1).isdigit():
+                        fps_sources.append(fps.split(" ")[0])
                 searchDate = True
             elif searchDate:
                 fps_sources.append(datetime.strptime(line.rstrip(), "%c"))
