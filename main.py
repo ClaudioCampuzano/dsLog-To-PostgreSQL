@@ -100,7 +100,7 @@ if __name__ == '__main__':
             extras.execute_values(cur, sqlQueryFlujo.as_string(cur), records)
             conn.commit()
             
-            print(str(cur.rowcount)+" records inserted successfully")
+            print(str(len(records))+" records inserted successfully")
         except (Exception, psycopg2.DatabaseError) as error:
                 print(error)
         finally:
