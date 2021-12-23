@@ -73,7 +73,7 @@ def recordExtractor(mallId, file, analitica):
         for rec in reversed(recordFromFile):
             for source in range(sourceNumber):
                 if rec[-1] > lastTime[source]:
-                    recordInsert.append((mallId, source,rec[source], rec[-1].strftime("%d-%m-%Y"), rec[-1].strftime("%:-%M:%S"), analitica))
+                    recordInsert.append((mallId, source,rec[source], rec[-1].strftime("%d-%m-%Y"), rec[-1].strftime("%H:%M:%S"), analitica))
                 
         print("Finish,", len(recordInsert), "records")
         
