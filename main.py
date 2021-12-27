@@ -89,7 +89,7 @@ if __name__ == '__main__':
     
     records = recordExtractor(args.mallNumber, args.logFlujoDs, 'flujo')
     records += recordExtractor(args.mallNumber, args.logAforoDs, 'aforo')
-    
+    print('---------------','','---------------')
     if records:
         queryText = "INSERT INTO {table}(id_cc, id_ds, fps, fecha, hora, analitica) VALUES %s;"
         try:
